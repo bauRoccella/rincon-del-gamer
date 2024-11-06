@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: left;
+  margin-left: 9%; /* Alinea el título con el contenedor */
+}
+
+/* src/styles/GameRegistry.module.css */
+.gameRegistryContainer {
+  background-color: #f5f5f5;
+  border-radius: 10px; /* Bordes redondeados para el contenedor */
+  margin: 0 9% 9% 9%;
+  font-family: 'Rajdhani', sans-serif; /* Aplica la fuente a todos los elementos dentro de este contenedor */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+}
+
+.upperSection {
+  height: 850px; /* Altura fija de 850 píxeles */
+  background-color: #e0e0e0; /* Color de fondo para distinguir la sección */
+  margin-bottom: 10px; /* Espacio entre las secciones */
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.column {
+  padding: 10px;
+}
+
+.column1 {
+  width: 35%;
+  background-color: #d0d0d0; /* Color de fondo para distinguir la columna */
+}
+
+.column2 {
+  width: 30%;
+  background-color: #c0c0c0; /* Color de fondo para distinguir la columna */
+}
+
+.column3 {
+  width: 35%;
+  background-color: #d0d0d0; /* Color de fondo para distinguir la columna */
+}
+
+.columnTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 7px; /* Deja 10px de espacio hacia abajo */
+}
+
+.textAreaField {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 100px; /* Altura del textarea */
+  resize: none; /* Evita que el usuario ajuste el tamaño */
+  margin-bottom: 10px; /* Espacio entre los campos */
+}
+
+.selectField {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px; /* Espacio entre los campos */
+}
+
+.selectedCategories {
+  margin-top: 10px;
+}
+
+.categoryTag {
+  display: inline-block;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 5px;
+  position: relative;
+}
+
+.categoryTag:hover .removeCategory {
+  display: inline;
+}
+
+.removeCategory {
+  display: none;
+  margin-left: 10px;
+  color: rgb(241, 137, 255);
+  cursor: pointer;
+}
+
+.languagesContainer {
+  margin-top: 20px;
+}
+
+.languagesTitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.languagesContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.languageColumn {
+  width: 48%;
+  text-align: left; /* Justifica el contenido de las columnas hacia la izquierda */
+}
+
+.languageColumn label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px; /* Tamaño de subtítulo */
+}
+
+.coverBox {
+  border-radius: 8px;
+  height: 483px;
+  background-color: #ffffff; /* Color de fondo para distinguir el recuadro */
+  border: 1px solid #ccc; /* Borde del recuadro */
+  background-size: cover; /* Asegura que la imagen cubra todo el recuadro */
+  background-position: center; /* Centra la imagen */
+  margin-bottom: 15px;
+}
+
+.imageUploadInput {
+  display: none; /* Oculta el input de archivo */
+}
+
+.uploadButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #8A2BE2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.uploadButton:hover {
+  background-color: #9F4DEC;
+}
+
+.priceTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.priceInputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.priceInput {
+  width: 100%;
+  padding: 8px;
+  font-size: 24px; /* Tamaño de fuente de título */
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-right: 40px; /* Espacio para el texto ARS */
+}
+
+.priceInput::-webkit-outer-spin-button,
+.priceInput::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Oculta las flechas en Chrome, Safari y Edge */
+  margin: 0;
+}
+
+.priceCurrency {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-family: 'Rajdhani', sans-serif;
+  color: #666;
+}
+
+.lowerSection {
+  flex-grow: 1; /* Ocupa el espacio restante */
+  background-color: #ffffff; /* Color de fondo para distinguir la sección */
+  border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+}

@@ -1,0 +1,61 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: linear-gradient(to bottom, #FF6EC7, #B57ECD);
+    position: relative;
+    height: 80px;
+  }
+  
+  .navbarLeft, .navbarCenter{
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbarRight {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .logoCenter {
+    max-height: 70%;
+    max-width: 100%;
+  }
+  
+  .logoLeft {
+    max-height: 30%;
+    max-width: 100%;
+    height: 100px;
+  }
+  
+  .logoCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .navbarCenter {
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .loginButton {
+    background-color: #FECEDE;
+    color: black;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginButton:hover {
+    background-color: #6A1BBE;
+  }

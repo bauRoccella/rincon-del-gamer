@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+body.login-page {
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #EABDF7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Rajdhani', sans-serif; /* Aplica la fuente a todos los elementos dentro de este contenedor */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el contenedor */
+  border-radius: 8px;
+  max-width: 400px; /* Tamaño máximo del contenedor */
+  width: 100%; /* Asegura que el contenedor no exceda el tamaño máximo */
+  margin: auto; /* Centra el contenedor horizontalmente */
+}
+
+form {
+  background-color: #EABDF7;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+form h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #8A2BE2;
+  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que el título también use la fuente */
+}
+
+input {
+  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los inputs también usen la fuente */
+}
+
+input::placeholder {
+  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los placeholders también usen la fuente */
+}
+
+button {
+  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los botones también usen la fuente */
+}
+
+.passwordRecovery a {
+  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los enlaces también usen la fuente */
+}
