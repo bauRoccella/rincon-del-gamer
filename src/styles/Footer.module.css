@@ -101,7 +101,7 @@ body, html {
 .contactNumber {
   color: #3092F7;
   font-size: 22px; /* Color celeste para el número de contacto */
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .footerBottom {

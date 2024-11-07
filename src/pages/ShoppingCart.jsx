@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import styles from '../styles/ShoppingCart.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { Trash2 } from 'lucide-react'
+import { Check } from 'lucide-react';
 
 function ShoppingCart() {
   const navigate = useNavigate();
 
   // Estado inicial del carrito
   const [cartItems, setCartItems] = useState([
-    { id: 1, title: "God of War", price: 59.99, image: "/images/background.jpg" },
-    { id: 2, title: "The Binding of Isaac", price: 13.99, image: "/images/corner_logo.png" },
-    { id: 3, title: "God of War II", price: 50.0, image: "/images/fondo-iniciosesion.jpg" },
-    { id: 4, title: "Ratchet & Clank", price: 79.98, image: "/images/logo.png" },
+    { id: 1, title: "God of War", price: 59.99, image: "/images/god_of_war.png" },
+    { id: 2, title: "The Binding of Isaac", price: 13.99, image: "/images/boi.png" },
+    { id: 3, title: "God of War II", price: 50.0, image: "/images/god_of_war.png" },
+    { id: 4, title: "Ratchet & Clank", price: 79.98, image: "/images/resident_evil.png" },
   ]);
 
   // Calcular subtotal y total
@@ -60,7 +60,7 @@ function ShoppingCart() {
                 <span>{item.title}</span>
                 <span>${item.price.toFixed(2)}</span>
                 <button className={styles.deleteButton} onClick={() => handleDeleteItem(item.id)}>
-                  <FontAwesomeIcon icon={faTrash} />
+                  <Trash2 color='black' />
                 </button>
               </div>
             ))}
@@ -87,7 +87,7 @@ function ShoppingCart() {
           <span>${total.toFixed(2)}</span>
         </div>
         <div className={styles.taxInfo}>
-          <small><FontAwesomeIcon icon={faCheck} /> Impuesto e IVA incluidos</small>
+          <small><Check color='#32C770' size="14px"/> Impuesto e IVA incluidos</small>
         </div>
         {cartItems.length > 0 && (
           <button className={styles.payButton} onClick={handleProceedToPayment}>

@@ -1,0 +1,142 @@
+.wishlistContainer {
+    padding: 50px;
+  }
+  
+  .title {
+    text-align: center;
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #FECEDE;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .gameInfo {
+    flex-grow: 1;
+  }
+  
+  .gameTitle {
+    font-size: 20px;
+    color: #000000;
+    margin: 0;
+    font-family: 'Press Start 2P';
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .addToCart {
+    background-color: #FF6EC7;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .addToCart:hover {
+    background-color: #B57ECD;
+  }
+  
+  .remove {
+    background-color: #B57ECD;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .remove:hover {
+    background-color: #FF6EC7;
+  }
+  
+  .details {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .details:hover {
+    background-color: #FF6EC7;
+    color: #FFFFFF;
+  }
+  
+  .emptyMessage {
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'Rajdhani', sans-serif;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  
+    .card {
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: center;
+      text-align: center;
+    }
+  
+    .image {
+      margin-bottom: 15px; /* Separación inferior para la imagen */
+    }
+  
+    .buttons {
+      width: 100%; /* Botones ocupan todo el ancho en móvil */
+      margin: 20px 0; /* Espacio entre botones y borde inferior */
+    }
+  
+    .addToCart, .remove, .details {
+      width: 100%; /* Botones se expanden horizontalmente */
+    }
+  }

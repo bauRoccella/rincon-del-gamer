@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Nav.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { User } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 function Navbar() {
   return (
@@ -17,16 +19,16 @@ function Navbar() {
       </div>
       <div className={styles.navbarRight}>
         <Link to="/products" className={styles.iconButton} aria-label="Products">
-          <FontAwesomeIcon icon={faSearch} />
+          <Search color="black" />
         </Link>
         <Link to="/cart" className={styles.iconButton} aria-label="Cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
+          <ShoppingCart color="black" />
         </Link>
         <Link to="/wishlist" className={styles.iconButton} aria-label="Wishlist">
-          <FontAwesomeIcon icon={faHeart} />
+          <Heart color="black" />
         </Link>
         <Link to="/profile" className={styles.iconButton} aria-label="Profile">
-          <FontAwesomeIcon icon={faUser} />
+          <User color="black" />
         </Link>
       </div>
     </nav>

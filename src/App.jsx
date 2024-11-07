@@ -18,6 +18,8 @@ import BusinessProfile from "./pages/BusinessProfile";
 import './styles/App.css';
 import PaymentMethod from "./pages/PaymentMethod";
 import ShoppingCart from "./pages/ShoppingCart";
+import Wishlist from "./pages/Wishlist";
+import GameSearch from "./pages/GameSearch";
 
 export const UserRoutes = () => {
   return (
@@ -27,7 +29,7 @@ export const UserRoutes = () => {
           path="/"
           element={
             <>
-              <BusinessNav />
+              <UserNav />
               <div className="content">
                 <Home />
               </div>
@@ -89,7 +91,7 @@ export const UserRoutes = () => {
             <>
               <UserNav />
               <div className="content">
-                <BusinessProfile />
+                <UserProfile />
               </div>
               <Footer />
             </>
@@ -126,6 +128,30 @@ export const UserRoutes = () => {
               <UserNav />
               <div className="content">
                 <PaymentMethod />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <>
+              <UserNav />
+              <div className="content">
+                <Wishlist />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <>
+              <UserNav />
+              <div className="content">
+                <GameSearch />
               </div>
               <Footer />
             </>

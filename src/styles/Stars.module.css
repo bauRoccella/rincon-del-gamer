@@ -1,0 +1,13 @@
+.starsContainer {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .filledStar {
+    color: #FFD700; /* Dorado para estrellas llenas */
+  }
+  
+  .emptyStar {
+    color: #B57ECD; /* Color más tenue para estrellas vacías */
+  }
+  
