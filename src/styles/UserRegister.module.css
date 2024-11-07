@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+.registerContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+}
+
+.registerBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.registerBox {
+  position: relative;
+  z-index: 2;
+  background-color: #EABDF7;
+  padding: 20px; /* Reducción mayor del padding */
+  padding-top: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px; /* Reducir más el ancho máximo */
+  box-sizing: border-box;
+  max-height: 540px; /* Reducir la altura máxima */
+}
+
+.logoImage {
+  width: 150px; /* Reducir más el tamaño del logo */
+  position: absolute;
+  top: -25px; /* Ajustar la posición del logo */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.registerTitle {
+  font-size: 28px; /* Reducir más el tamaño de la fuente */
+  color: #8A2BE2;
+  text-align: center;
+  font-weight: 500;
+}
+
+.registerSubtitle {
+  font-size: 16px; /* Ajustar el tamaño del subtítulo */
+  color: #4D7DBC;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px; /* Reducir el padding de los campos de entrada */
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid rgba(50, 161, 198, 0.3);
+  background-color: #FFFFFF;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.registerButton {
+  width: 100%;
+  padding: 10px; /* Reducir el padding del botón */
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8A2BE2;
+  color: #FFFFFF;
+  font-size: 14px; /* Reducir el tamaño del texto del botón */
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.loginLink {
+  margin-top: 12px; /* Reducir el margen superior del enlace de inicio de sesión */
+  color: #4D7DBC;
+  text-align: center;
+  display: block;
+}
+
+.loginLink a {
+  text-decoration: none;
+  color: #8A2BE2;
+  font-weight: 600;
+}
+
+.loginLink a:hover {
+  color: #32A1C6;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .registerBox {
+    padding: 20px;
+    padding-top: 25px;
+    max-width: 400px; /* Ajustar el ancho para pantallas medianas */
+  }
+
+  .logoImage {
+    width: 140px;
+    top: -25px;
+  }
+
+  .registerTitle {
+    font-size: 20px;
+  }
+
+  .registerSubtitle, .inputField, .registerButton, .loginLink a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registerBox {
+    padding: 15px;
+    padding-top: 20px;
+    max-width: 350px; /* Ajustar más el ancho para pantallas pequeñas */
+  }
+
+  .logoImage {
+    width: 120px;
+    top: -20px;
+  }
+
+  .registerTitle {
+    font-size: 18px;
+  }
+
+  .registerSubtitle, .inputField, .registerButton, .loginLink a {
+    font-size: 12px;
+  }
+}

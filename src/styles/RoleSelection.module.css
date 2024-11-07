@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
 
-.loginContainer {
+.roleSelectionContainer {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -10,7 +10,7 @@
   font-family: 'Rajdhani', sans-serif;
 }
 
-.loginBackground {
+.roleSelectionBackground {
   position: fixed;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@
   left: 0;
 }
 
-.loginBox {
+.roleSelectionBox {
   position: relative;
   z-index: 2;
   background-color: #EABDF7;
@@ -49,22 +49,26 @@
   transform: translateX(-50%);
 }
 
-.loginTitle {
+.roleSelectionTitle {
   font-size: 32px;
   color: #8A2BE2;
   text-align: center;
   font-weight: 500;
 }
 
-.loginSubtitle {
+.roleSelectionSubtitle {
   font-size: 17px;
   color: #4D7DBC;
-  margin-bottom: 15px;
+  margin: 15px;
   text-align: center;
   font-weight: 500;
 }
 
-.inputField {
+.selectContainer {
+  margin-bottom: 20px;
+}
+
+.roleSelect {
   width: 100%;
   padding: 15px;
   margin: 10px 0;
@@ -76,20 +80,10 @@
   font-weight: 400;
 }
 
-.forgotPassword {
-  display: block;
-  color: #4D7DBC;
-  margin-top: 10px;
-  font-size: 17px;
-  text-decoration: none;
-  text-align: left;
-  font-weight: 400;
-}
-
-.loginButton {
+.registerButton {
   width: 100%;
   padding: 15px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   border: none;
   border-radius: 5px;
   background-color: #8A2BE2;
@@ -100,31 +94,25 @@
   font-weight: 600;
 }
 
-.registerLink {
+.loginLink {
   margin-top: 18px;
   color: #4D7DBC;
   text-align: center;
   display: block;
 }
 
-.createAccountButton {
-  background: none;
-  border: none;
+.loginLink a {
+  text-decoration: none;
   color: #8A2BE2;
-  font-size: 17px;
-  cursor: pointer;
-  padding: 0;
-  font-family: 'Rajdhani', sans-serif;
   font-weight: 600;
 }
 
-.createAccountButton:hover {
+.loginLink a:hover {
   color: #32A1C6;
 }
 
-/* Estilos Responsive */
 @media (max-width: 768px) {
-  .loginBox {
+  .roleSelectionBox {
     padding: 30px;
     padding-top: 50px;
   }
@@ -134,17 +122,17 @@
     top: -40px;
   }
 
-  .loginTitle {
+  .roleSelectionTitle {
     font-size: 28px;
   }
 
-  .loginSubtitle, .inputField, .forgotPassword, .loginButton, .registerLink, .createAccountButton {
+  .roleSelectionSubtitle, .roleSelect, .registerButton, .loginLink a {
     font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .loginBox {
+  .roleSelectionBox {
     padding: 20px;
     padding-top: 40px;
   }
@@ -154,11 +142,11 @@
     top: -30px;
   }
 
-  .loginTitle {
+  .roleSelectionTitle {
     font-size: 24px;
   }
 
-  .loginSubtitle, .inputField, .forgotPassword, .loginButton, .registerLink, .createAccountButton {
+  .roleSelectionSubtitle, .roleSelect, .registerButton, .loginLink a {
     font-size: 14px;
   }
 }
