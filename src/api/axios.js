@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Crear una instancia de Axios
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3000/api', // URL de la API
+    baseURL: 'http://localhost:3000/api/v1', // URL de la API
 });
 
 // Agregar un interceptor para incluir el JWT en los headers
