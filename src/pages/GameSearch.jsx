@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/GameSearch.module.css';
 import { Star } from 'lucide-react';
+import axiosInstance from '../api/axios';
+import toast from 'react-hot-toast';
 
 export default function GameSearch() {
-    const [games, setGames] = useState([
-        { id: 1, title: 'Spider-Man Remastered', price: 49.99, image: '/images/spiderman.png', category: 'Acción', system: 'Windows', players: 'Single-Player', language: 'Español', rating: 5 },
-        { id: 2, title: 'Resident Evil 3', price: 39.99, image: '/images/resident_evil.png', category: 'Acción', system: 'Windows', players: 'Single-Player', language: 'Inglés', rating: 4 },
-        { id: 3, title: 'God of War', price: 59.99, image: '/images/god_of_war.png', category: 'Aventura', system: 'Mac', players: 'Single-Player', language: 'Español', rating: 5 },
-        { id: 4, title: 'The Binding of Isaac', price: 19.99, image: '/images/boi.png', category: 'Arcade', system: 'Mac', players: 'Multi-Player', language: 'Inglés', rating: 3 },
-        { id: 5, title: 'The Binding of Isaac', price: 99.99, image: '/images/boi.png', category: 'Estrategia', system: 'Windows', players: 'Multi-Player', language: 'Ruso', rating: 2 },
-        { id: 6, title: 'The Binding of Isaac', price: 79.99, image: '/images/boi.png', category: 'Simulación', system: 'Mac', players: 'Single-Player', language: 'Francés', rating: 4 },
-        { id: 7, title: 'The Binding of Isaac', price: 109.99, image: '/images/boi.png', category: 'Musicales', system: 'Windows', players: 'Multi-Player', language: 'Japonés', rating: 5 },
-    ]);
+    // const [games, setGames] = useState([
+    //     { id: 1, title: 'Spider-Man Remastered', price: 49.99, image: '/images/spiderman.png', category: 'Acción', system: 'Windows', players: 'Single-Player', language: 'Español', rating: 5 },
+    //     { id: 2, title: 'Resident Evil 3', price: 39.99, image: '/images/resident_evil.png', category: 'Acción', system: 'Windows', players: 'Single-Player', language: 'Inglés', rating: 4 },
+    //     { id: 3, title: 'God of War', price: 59.99, image: '/images/god_of_war.png', category: 'Aventura', system: 'Mac', players: 'Single-Player', language: 'Español', rating: 5 },
+    //     { id: 4, title: 'The Binding of Isaac', price: 19.99, image: '/images/boi.png', category: 'Arcade', system: 'Mac', players: 'Multi-Player', language: 'Inglés', rating: 3 },
+    //     { id: 5, title: 'The Binding of Isaac', price: 99.99, image: '/images/boi.png', category: 'Estrategia', system: 'Windows', players: 'Multi-Player', language: 'Ruso', rating: 2 },
+    //     { id: 6, title: 'The Binding of Isaac', price: 79.99, image: '/images/boi.png', category: 'Simulación', system: 'Mac', players: 'Single-Player', language: 'Francés', rating: 4 },
+    //     { id: 7, title: 'The Binding of Isaac', price: 109.99, image: '/images/boi.png', category: 'Musicales', system: 'Windows', players: 'Multi-Player', language: 'Japonés', rating: 5 },
+    // ]);
+        const [games, setGames] = useState([]);
+
+    useEffect(() => {
+        try {
+            const response = axiosInstance.get('/games');
+            setGames(response.data);
+        } catch (error) {
+            toast.error('Error al cargar los juegos');
+        };
+    }, []);
 
     const [filters, setFilters] = useState({
         category: [],

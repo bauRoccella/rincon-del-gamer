@@ -1,0 +1,42 @@
+.item {
+    background-color: #959595; /* Color de fondo para distinguir el recuadro */
+    border: 1px solid #ccc; /* Borde del recuadro */
+    border-radius: 15px; /* Bordes redondeados */
+    width: 100%;
+    padding-top: 100%; /* Mantiene la proporción cuadrada */
+    position: relative;
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+  }
+  
+  .item::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: transparent;
+    transition: color 0.3s;
+  }
+  
+  .item:hover::before {
+    color: rgb(143, 0, 172);
+  }
+  
+  .item:hover .removeImage {
+    display: block;
+  }
+  
+  .removeImage {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    cursor: pointer;
+  }
+  
+  .imageUploadInput {
+    display: none; /* Oculta el input de archivo */
+  }

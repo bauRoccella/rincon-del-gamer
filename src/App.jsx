@@ -20,6 +20,7 @@ import PaymentMethod from "./pages/PaymentMethod";
 import ShoppingCart from "./pages/ShoppingCart";
 import Wishlist from "./pages/Wishlist";
 import GameSearch from "./pages/GameSearch";
+import CompanyProducts from "./pages/CompanyProducts"; // Importa el nuevo componente
 
 export const UserRoutes = () => {
   return (
@@ -146,12 +147,12 @@ export const UserRoutes = () => {
           }
         />
         <Route
-          path="/products"
+          path="/company-products"
           element={
             <>
               <UserNav />
               <div className="content">
-                <GameSearch />
+                <CompanyProducts />
               </div>
               <Footer />
             </>

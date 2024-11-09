@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import styles from '../styles/GameRegistry.module.css';
+import Item from '../components/Item';
+import OS from '../components/OS';
 
 const GameRegistry = () => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [coverImage, setCoverImage] = useState(null);
+    const [developerImage, setDeveloperImage] = useState(null);
 
     const handleCategoryChange = (event) => {
         const category = event.target.value;
@@ -16,12 +19,12 @@ const GameRegistry = () => {
         setSelectedCategories(selectedCategories.filter(category => category !== categoryToRemove));
     };
 
-    const handleImageUpload = (event) => {
+    const handleImageUpload = (event, setImage) => {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setCoverImage(reader.result);
+                setImage(reader.result);
             };
             reader.readAsDataURL(file);
         }
@@ -103,6 +106,17 @@ const GameRegistry = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className={styles.gameModesContainer}>
+                            <h3 className={styles.gameModesTitle}>Modalidad de juego</h3>
+                            <label>
+                                <input type="checkbox" />
+                                Singleplayer
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Multiplayer
+                            </label>
+                        </div>
                     </div>
                     <div className={`${styles.column} ${styles.column2}`}>
                         <h2 className={styles.columnTitle}>Portada</h2>
@@ -112,13 +126,45 @@ const GameRegistry = () => {
                         ></div>
                         <input
                             type="file"
-                            id="imageUpload"
+                            id="coverImageUpload"
                             className={styles.imageUploadInput}
-                            onChange={handleImageUpload}
+                            onChange={(e) => handleImageUpload(e, setCoverImage)}
                         />
-                        <label htmlFor="imageUpload" className={styles.uploadButton}>
+                        <label htmlFor="coverImageUpload" className={styles.uploadButton}>
                             Cargar Imagen
                         </label>
+                        <h3 className={styles.galleryTitle}>Galería</h3>
+                        <div className={styles.galleryBox}>
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                        </div>
+                    </div>
+                    <div className={`${styles.column} ${styles.column3}`}>
+                        <h2 className={styles.columnTitle}>Foto del desarrollador</h2>
+                        <div
+                            className={styles.developerBox}
+                            style={{ backgroundImage: `url(${developerImage})` }}
+                        ></div>
+                        <input
+                            type="file"
+                            id="developerImageUpload"
+                            className={styles.imageUploadInput}
+                            onChange={(e) => handleImageUpload(e, setDeveloperImage)}
+                        />
+                        <label htmlFor="developerImageUpload" className={styles.uploadButton}>
+                            Cargar Imagen
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Nombre del desarrollador"
+                            className={styles.inputField}
+                        />
+                        <textarea
+                            placeholder="Descripción del desarrollador"
+                            className={styles.textAreaField}
+                        />
                         <h3 className={styles.priceTitle}>Precio</h3>
                         <div className={styles.priceInputContainer}>
                             <input
@@ -130,15 +176,28 @@ const GameRegistry = () => {
                             <span className={styles.priceCurrency}>ARS</span>
                         </div>
                     </div>
-                    <div className={`${styles.column} ${styles.column3}`}>
-                        {/* Add your content here */}
-                        <p>Column 3 (35%)</p>
-                    </div>
                 </div>
                 <div className={styles.lowerSection}>
-                    {/* Add your content here */}
-                    <p>This is the lower section that occupies the remaining space.</p>
+                    <div className={styles.requirementsColumn}>
+                        <h3 className={styles.requirementsTitle}>Requerimientos Mínimos</h3>
+                        <OS osName="Windows" />
+                        <OS osName="MacOS" />
+                        <OS osName="Linux" />
+                    </div>
+                    <div className={styles.requirementsColumn}>
+                        <h3 className={styles.requirementsTitle}>Requerimientos Recomendados</h3>
+                        <OS osName="Windows" />
+                        <OS osName="MacOS" />
+                        <OS osName="Linux" />
+                    </div>
                 </div>
+            </div>
+            <div className={styles.termsContainer}>
+                <label className={styles.termsLabel}>
+                    <input type="checkbox" className={styles.termsCheckbox} />
+                    Acepta los términos y condiciones de El Rincón del Gamer
+                </label>
+                <button className={styles.publishButton}>Publicar</button>
             </div>
         </div>
     );

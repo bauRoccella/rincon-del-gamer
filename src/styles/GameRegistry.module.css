@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
 
+
+
 .pageTitle {
   font-size: 32px;
   font-weight: bold;
@@ -12,7 +14,7 @@
 .gameRegistryContainer {
   background-color: #f5f5f5;
   border-radius: 10px; /* Bordes redondeados para el contenedor */
-  margin: 0 9% 9% 9%;
+  margin: 0 9% 3% 9%;
   font-family: 'Rajdhani', sans-serif; /* Aplica la fuente a todos los elementos dentro de este contenedor */
   display: flex;
   flex-direction: column;
@@ -20,12 +22,17 @@
 }
 
 .upperSection {
-  height: 850px; /* Altura fija de 850 píxeles */
+  height: 960px; /* Altura fija de 850 píxeles */
   background-color: #e0e0e0; /* Color de fondo para distinguir la sección */
   margin-bottom: 10px; /* Espacio entre las secciones */
   display: flex;
   justify-content: space-between;
   border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+/* Asegura que los títulos de las columnas sean negros */
+.columnTitle {
+  color: black;
 }
 
 .column {
@@ -45,13 +52,16 @@
 .column3 {
   width: 35%;
   background-color: #d0d0d0; /* Color de fondo para distinguir la columna */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
 }
 
-.columnTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-family: 'Rajdhani', sans-serif;
+.column3 .columnTitle {
+  text-align: left; /* Alinea el título a la izquierda */
+  width: 100%; /* Asegura que el título ocupe todo el ancho de la columna */
+  color: black;
+
 }
 
 .inputField {
@@ -62,7 +72,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-bottom: 7px; /* Deja 10px de espacio hacia abajo */
+  margin: 5px 0; /* Aumenta el espacio entre el botón y el título */
 }
 
 .textAreaField {
@@ -75,7 +85,7 @@
   box-sizing: border-box;
   height: 100px; /* Altura del textarea */
   resize: none; /* Evita que el usuario ajuste el tamaño */
-  margin-bottom: 10px; /* Espacio entre los campos */
+  margin: 5px 0; /* Aumenta el espacio entre el botón y el título */
 }
 
 .selectField {
@@ -127,6 +137,7 @@
 .languagesContent {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .languageColumn {
@@ -135,9 +146,15 @@
 }
 
 .languageColumn label {
-  display: block;
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
   font-size: 18px; /* Tamaño de subtítulo */
+}
+
+.languageColumn input[type="checkbox"] {
+  margin-right: 10px; /* Espacio entre el checkbox y el texto */
+  accent-color: #8A2BE2;
 }
 
 .coverBox {
@@ -150,12 +167,23 @@
   margin-bottom: 15px;
 }
 
+.developerBox {
+  border-radius: 8px;
+  width: 300px; /* Ancho del cuadro */
+  height: 300px; /* Altura del cuadro */
+  background-color: #ffffff; /* Color de fondo para distinguir el recuadro */
+  border: 1px solid #ccc; /* Borde del recuadro */
+  background-size: cover; /* Asegura que la imagen cubra todo el recuadro */
+  background-position: center; /* Centra la imagen */
+  margin: 5px 0; /* Aumenta el espacio entre el botón y el título */
+}
+
 .imageUploadInput {
   display: none; /* Oculta el input de archivo */
 }
 
 .uploadButton {
-  margin-top: 10px;
+  margin: 5px 0; /* Aumenta el espacio entre el botón y el título */
   padding: 10px 20px;
   font-size: 16px;
   font-family: 'Rajdhani', sans-serif;
@@ -170,17 +198,37 @@
   background-color: #9F4DEC;
 }
 
-.priceTitle {
+.galleryTitle {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  font-family: 'Rajdhani', sans-serif;
+}
+.galleryBox {
+  width: 100%;
+  padding: 10px; /* Espacio entre los bordes del galleryBox y los galleryItems */
+  background-color: #c7c7c7; /* Color de fondo gris */
+  border: 1px solid #ccc; /* Borde del recuadro */
+  border-radius: 8px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+  grid-template-rows: repeat(2, 1fr); /* Dos filas iguales */
+  gap: 10px; /* Espacio entre los galleryItems */
+  height: 350px; /* Altura del galleryBox aumentada */
+}
+
+.priceTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
   font-family: 'Rajdhani', sans-serif;
 }
 
 .priceInputContainer {
   position: relative;
   width: 100%;
-}
+} 
 
 .priceInput {
   width: 100%;
@@ -191,6 +239,7 @@
   border-radius: 4px;
   box-sizing: border-box;
   padding-right: 40px; /* Espacio para el texto ARS */
+  -moz-appearance: textfield; /* Oculta las flechas en Firefox */
 }
 
 .priceInput::-webkit-outer-spin-button,
@@ -210,7 +259,91 @@
 }
 
 .lowerSection {
-  flex-grow: 1; /* Ocupa el espacio restante */
+  display: flex;
+  justify-content: space-between;
   background-color: #ffffff; /* Color de fondo para distinguir la sección */
   border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+  padding: 20px; /* Espacio interno */
+}
+
+
+.gameModesContainer {
+  margin-top: 20px;
+}
+
+.gameModesTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center; /* Centra el título dentro de su contenedor */
+}
+
+.gameModesContainer label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 18px; /* Tamaño de subtítulo */
+}
+
+.gameModesContainer input[type="checkbox"] {
+  margin-right: 10px; /* Espacio entre el checkbox y el texto */
+  accent-color: #8A2BE2;
+
+}
+
+.lowerSection {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0e0e0; /* Color de fondo para distinguir la sección */
+  border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+  padding: 20px; /* Espacio interno */
+}
+
+.requirementsColumn {
+  width: 48%; /* Ancho de cada columna */
+}
+
+.requirementsTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center; /* Centra el título dentro de su contenedor */
+}
+
+.termsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.termsLabel {
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  margin-right: 20px; /* Espacio entre el checkbox y el botón */
+}
+
+.termsCheckbox {
+  margin-right: 10px;
+  accent-color: #8A2BE2; /* Color de acento */
+}
+
+.publishButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #8A2BE2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.publishButton:hover {
+  background-color: #9F4DEC;
 }

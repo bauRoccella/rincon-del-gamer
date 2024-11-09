@@ -1,0 +1,100 @@
+.contentContainer {
+  padding: 2rem;
+  background-color: #f3eafc;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #4b0082;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.chartSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.chartInfo {
+  background-color: #f3eafc;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.chartInfo h3 {
+  margin-bottom: 1rem;
+  color: #4b0082;
+}
+
+.chartInfo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chartInfo li {
+  margin: 0.5rem 0;
+}
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.productCard {
+  background-color: #ffe6f2;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.productInfo {
+  margin-top: 0.5rem;
+}
+
+.productActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.publishBtn {
+  background-color: #ff66cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.publishBtn:hover {
+  background-color: #e055b3;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: #cc0000;
+}
