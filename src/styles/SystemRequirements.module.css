@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: space-around; /* Asegura que los contenedores tengan un espacio igual a su alrededor */
+  gap: 10px;
+  background-color: #FECEDE; /* Color rosa que cubre todo el ancho */
+  padding: 20px; /* Agrega un poco de espacio interno */
+}
+
+.requirementsSection {
+  background-color: #FECEDE; /* Fondo blanco solo para las secciones */
+  padding: 20px;
+  width: 30%; /* Reduce un poco el ancho para dejar más espacio */
+}
+
+.requirementsSection h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.requirementsSection ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.requirementsSection li {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 1px;
+  background-color: #000; /* Color de la línea */
+  height: auto;
+  margin: 0 10px; /* Espaciado entre las columnas */
+  border-radius: 5px;
+}

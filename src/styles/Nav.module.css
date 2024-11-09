@@ -1,55 +1,99 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    background: linear-gradient(to bottom, #FF6EC7, #B57ECD);
-    position: relative;
-    height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: linear-gradient(to bottom, #FF6EC7, #B57ECD);
+  position: relative;
+}
+
+.navbarLeft, .navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaciado entre los íconos */
+}
+
+.navbarLeft {
+  margin-right: auto; /* Mantiene el logo de la izquierda cerca del borde, pero con espacio */
+}
+
+.navbarRight {
+  margin-left: auto; /* Mantiene los iconos de la derecha cerca del borde, pero con espacio */
+}
+
+.navbarCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Mantén el logo central perfectamente centrado */
+}
+
+
+.logoCenter {
+  max-height: 70%;
+  max-width: 100%;
+  height: 40px;
+}
+
+.logoLeft {
+  max-height: 30%;
+  max-width: 100%;
+  height: 50px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  display: none;
+}
+
+.iconButton {
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+  color: #000;
+}
+
+.iconButton:hover {
+  color: #ff6ec7;
+}
+
+.menuIcons {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
   }
-  
-  .navbarLeft, .navbarCenter{
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbarRight {
-    display: flex;
-    align-items: center;
-    height: 50px;
-  }
-  
-  .logoCenter {
-    max-height: 70%;
-    max-width: 100%;
-    height: 40px;
-  }
-  
-  .logoLeft {
-    max-height: 30%;
-    max-width: 100%;
-    height: 50px;
-  }
-  
-  .logoCenter {
+
+  .menuIcons {
+    display: none; /* Ocultar iconos por defecto en pantallas pequeñas */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 100%;
+    right: 0;
+    background-color: #fecede;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    width: 100%; /* Expandir el menú a todo el ancho */
+    z-index: 10;
   }
-  
-  .navbarCenter {
-    flex-grow: 1;
-    justify-content: center;
+
+  .menuIcons.showMenu {
+    display: flex; /* Mostrar iconos cuando el menú hamburguesa está abierto */
   }
 
   .iconButton {
-    color: #000;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s;
+    margin: 10px 0; /* Separación vertical para el menú hamburguesa */
+    text-align: center; /* Centrar iconos horizontalmente */
   }
-  
-  .iconButton:hover {
-    color: #ff6ec7; /* Color de hover personalizado */
+
+  .navbarRight {
+    position: relative;
   }
+}

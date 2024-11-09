@@ -20,6 +20,8 @@ import PaymentMethod from "./pages/PaymentMethod";
 import ShoppingCart from "./pages/ShoppingCart";
 import Wishlist from "./pages/Wishlist";
 import GameSearch from "./pages/GameSearch";
+import GamePageUser from "./pages/GamePageUser";
+import GamePageBusiness from "./pages/GamePageBusiness";
 
 export const UserRoutes = () => {
   return (
@@ -29,7 +31,7 @@ export const UserRoutes = () => {
           path="/"
           element={
             <>
-              <UserNav />
+              <BusinessNav />
               <div className="content">
                 <Home />
               </div>
@@ -91,7 +93,7 @@ export const UserRoutes = () => {
             <>
               <UserNav />
               <div className="content">
-                <UserProfile />
+                <BusinessProfile />
               </div>
               <Footer />
             </>
@@ -152,6 +154,18 @@ export const UserRoutes = () => {
               <UserNav />
               <div className="content">
                 <GameSearch />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <>
+              <BusinessNav />
+              <div className="content">
+                <GamePageUser />
               </div>
               <Footer />
             </>

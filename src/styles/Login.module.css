@@ -83,7 +83,17 @@
   font-size: 17px;
   text-decoration: none;
   text-align: left;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.forgotPassword:hover {
+  display: block;
+  color: #8A2BE2;
+  margin-top: 10px;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: left;
+  font-weight: 600;
 }
 
 .loginButton {

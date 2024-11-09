@@ -87,9 +87,10 @@
   border-radius: 5px;
   background-color: #8A2BE2;
   color: #FFFFFF;
-  font-size: 14px; /* Reducir el tamaño del texto del botón */
+  font-size: 16px; /* Reducir el tamaño del texto del botón */
   cursor: pointer;
   font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .loginLink {

@@ -7,13 +7,22 @@ export default function Stars({ rating }) {
 
   return (
     <div className={styles.starsContainer}>
-      {stars.map((star, index) => (
-        <Star
-          key={index}
-          size={20}
-          className={index < rating ? styles.filledStar : styles.emptyStar}
-        />
-      ))}
+      {stars.map((star, index) => {
+        const isHalfFilled = rating >= star - 0.5 && rating < star;
+        return (
+          <Star
+            key={index}
+            size={20}
+            className={
+              rating >= star
+                ? styles.filledStar
+                : isHalfFilled
+                ? styles.halfFilledStar
+                : styles.emptyStar
+            }
+          />
+        );
+      })}
     </div>
   );
 }

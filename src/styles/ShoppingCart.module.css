@@ -1,129 +1,174 @@
 .container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    background-color: #F8F8F8;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.cart {
+  flex: 2;
+  background-color: #FECEDE;
+  border-radius: 3px;
+  padding: 20px;
+  height: fit-content;
+  border: 1px solid #FECEDE;
+}
+
+h2 {
+  color: #1D3178;
+}
+
+.cartHeader {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 40px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1D3178;
+  color: #1D3178;
+  margin-bottom: 10px;
+}
+
+.cartHeader .headerTitle, .cartHeader .headerPrice {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 40px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.itemImage {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.cartButtons {
+  display: flex;
+  justify-content: flex-end; /* Botones alineados a la derecha */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.continueButton, .clearButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.continueButton {
+  background-color: #FF1493;
+}
+
+.clearButton {
+  background-color: #FF1493;
+}
+
+.details {
+  flex: 1;
+  background-color: #FFEBF1;
+  border-radius: 3px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  height: fit-content;
+  color: #1D3178;
+  border: 1px solid #FECEDE;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  color: #15245E;
+  margin: 20px 0;
+}
+
+.taxInfo {
+  color: #8A91AB;
+  font-size: 1rem;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: left;
+}
+
+.payButton {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #32C770;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.payButton:hover {
+  background-color: #00B894;
+}
+
+/* Media Queries para hacer la página responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
   }
-  
-  .cart {
-    flex: 2;
-    background-color: #FECEDE;
-    border-radius: 3px;
-    padding: 20px;
-    height: fit-content;
-    border: 1px solid #FECEDE;
-  }
-  
-  h2 {
-    color: #1D3178;
-  }
-  
-  .cartHeader {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr 40px;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #1D3178;
-    color: #1D3178;
-    margin-bottom: 10px;
-  }
-  
-  .cartHeader .headerImage {
-    text-align: left;
-  }
-  
-  .cartHeader .headerTitle, .cartHeader .headerPrice {
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .cartItem {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr 40px;
-    align-items: center;
+
+  .cart, .details {
+    width: 100%;
     margin-bottom: 20px;
   }
-  
-  .itemImage {
-    width: 50px;
-    height: auto;
-    border-radius: 4px;
+
+  .cartHeader, .cartItem {
+    grid-template-columns: 50px 1fr 1fr 30px;
   }
-  
-  .deleteButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-  }
-  
+
   .cartButtons {
-    display: flex;
-    justify-content: flex-end; /* Botones alineados a la derecha */
-    gap: 10px;
-    margin-top: 20px;
+    justify-content: center;
   }
-  
+
   .continueButton, .clearButton {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    color: #FFF;
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: 'Rajdhani', sans-serif;
-  }
-  
-  .continueButton {
-    background-color: #FF1493;
-  }
-  
-  .clearButton {
-    background-color: #FF1493;
-  }
-  
-  .details {
-    flex: 1;
-    background-color: #FFEBF1;
-    border-radius: 3px;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Rajdhani', sans-serif;
-    height: fit-content;
-    color: #1D3178;
-    border: 1px solid #FECEDE;
-  }
-  
-  .detailItem {
-    display: flex;
-    justify-content: space-between;
-    color: #15245E;
-    margin: 20px 0;
-  }
-  
-  .taxInfo {
-    color: #8A91AB;
-    font-size: 1rem;
-    font-family: 'Rajdhani', sans-serif;
-    text-align: left;
-  }
-  
-  .payButton {
-    margin-top: 20px;
     width: 100%;
     padding: 10px;
-    background-color: #32C770;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .cartHeader, .cartItem {
+    grid-template-columns: 40px 1fr 1fr 20px;
+  }
+
+  .cartItem {
+    margin-right: 10px;
+  }
+
+  .itemImage {
+    width: 40px;
+  }
+
+  .continueButton, .clearButton {
     font-size: 14px;
-    font-family: 'Rajdhani', sans-serif;
+    padding: 8px;
   }
-  
-  .payButton:hover {
-    background-color: #00B894;
+
+  .payButton {
+    font-size: 12px;
+    padding: 8px;
   }
-  
+}

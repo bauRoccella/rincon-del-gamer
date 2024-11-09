@@ -20,13 +20,12 @@ body, html {
   text-align: center;
   width: 100%;
   margin-top: auto;
-  height: auto;
 }
 
 .footerContent {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
@@ -36,13 +35,12 @@ body, html {
   flex: 1;
   min-width: 250px;
   margin: 10px;
+  text-align: left;
 }
 
-/* Estilo para la columna de suscripción */
 .footerSubscription {
-  text-align: left;
   color: #FFFFFF;
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 14px;
   font-weight: 600;
 }
@@ -65,6 +63,7 @@ body, html {
   margin-right: 10px;
   border: 2px solid #787878;
   font-family: 'Rajdhani', sans-serif;
+  flex-grow: 1;
 }
 
 .subscribeForm button {
@@ -77,22 +76,30 @@ body, html {
   font-weight: 800;
   cursor: pointer;
   font-family: 'Rajdhani', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.subscribeForm button:hover {
+  background-color: #FFB6C1;
 }
 
 /* Estilo para la columna del logo */
 .footerLogo {
   text-align: center;
+  padding: 10px 0;
+}
+
+.footerLogo img {
+  max-width: 150px;
 }
 
 /* Estilo para la columna de contacto */
 .footerContact {
-  text-align: left;
   color: #FAF9F6;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-.footerContact h4{
-  text-align: left;
+.footerContact h4 {
   color: #000;
   font-size: 16px;
   font-weight: 800;
@@ -100,7 +107,7 @@ body, html {
 
 .contactNumber {
   color: #3092F7;
-  font-size: 22px; /* Color celeste para el número de contacto */
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -109,6 +116,7 @@ body, html {
   margin-top: 20px;
   font-size: 0.9em;
   color: #000;
+  opacity: 0.7;
 }
 
 /* Ajustes responsivos */
@@ -116,10 +124,11 @@ body, html {
   .footerContent {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .footerSection {
-    text-align: center;
+    min-width: 100%;
     margin: 10px 0;
   }
 
@@ -127,6 +136,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 10px;
   }
 
   .subscribeForm input[type="email"],
@@ -134,5 +144,32 @@ body, html {
     width: 100%;
     border-radius: 5px;
     margin: 5px 0;
+  }
+
+  .footerLogo img {
+    max-width: 80px;
+  }
+
+  .contactNumber {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .footerSection {
+    font-size: 14px;
+  }
+
+  .subscribeForm button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .footerBottom {
+    font-size: 0.8em;
   }
 }

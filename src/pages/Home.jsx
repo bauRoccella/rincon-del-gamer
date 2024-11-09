@@ -38,11 +38,12 @@ const bottomImages = [
 
 function Home() {
   const topCarouselSettings = {
-    dots: true,
+    dots: false,
     arrows: false,
     dotsClass: 'slick-dots',
     infinite: true,
     speed: 500,
+    autoplaySpeed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -52,7 +53,7 @@ function Home() {
     infinite: true,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
@@ -67,7 +68,7 @@ function Home() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },

@@ -37,7 +37,7 @@
     max-width: 100px;
     height: auto;
     border-radius: 8px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   
   .gameInfo {
@@ -95,6 +95,7 @@
     background-color: #FFFFFF;
     color: #000000;
     padding: 10px;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Rajdhani', sans-serif;
@@ -116,27 +117,61 @@
     margin-top: 20px;
   }
   
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 2fr; /* Una columna en pantallas pequeñas */
-    }
-  
-    .card {
-      flex-direction: column; /* Apila los elementos verticalmente */
-      align-items: center;
-      text-align: center;
-    }
-  
-    .image {
-      margin-bottom: 15px; /* Separación inferior para la imagen */
-    }
-  
-    .buttons {
-      width: 100%; /* Botones ocupan todo el ancho en móvil */
-      margin: 20px 0; /* Espacio entre botones y borde inferior */
-    }
-  
-    .addToCart, .remove, .details {
-      width: 100%; /* Botones se expanden horizontalmente */
-    }
+/* Responsividad */
+@media (max-width: 1124px) {
+  .wishlistContainer {
+    padding: 20px;
   }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Ajustar a una columna */
+    gap: 15px;
+  }
+
+  .card {
+    flex-direction: center;
+    align-items: center;
+  }
+
+  .addToCart, .remove {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  .card {
+    align-items: center; /* Centra los elementos en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .image {
+    max-width: 100px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 15px; /* Reduce el espacio entre tarjetas en pantallas muy pequeñas */
+  }
+
+  .card {
+    padding: 15px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .image {
+    max-width: 80px; /* Tamaño más pequeño para pantallas pequeñas */
+  }
+
+  .gameTitle {
+    font-size: 18px; /* Reduce el tamaño del título */
+  }
+}

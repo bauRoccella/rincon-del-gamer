@@ -50,9 +50,7 @@ function ShoppingCart() {
         ) : (
           <>
             <div className={styles.cartHeader}>
-              <span className={styles.headerTitle}>Juegos</span>
-              <span className={styles.headerPrice}>Precio</span>
-              <span></span> {/* Espacio para el ícono de eliminar */}
+              <span></span>
             </div>
             {cartItems.map(item => (
               <div key={item.id} className={styles.cartItem}>

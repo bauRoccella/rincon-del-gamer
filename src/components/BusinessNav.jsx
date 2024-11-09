@@ -1,36 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Nav.module.css';
-import { User } from 'lucide-react';
-import { Plus } from 'lucide-react';
-import { ChartPie } from 'lucide-react';
-import { Search } from 'lucide-react';
+import { User, Plus, ChartPie, Search, Menu, X } from 'lucide-react';
 
-function Navbar() {
+function BusinessNavbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarLeft}>
-        <img src="/images/corner_logo.png" alt="Logo Left" className={styles.logoLeft} />
+        <Link to="/">
+          <img src="/images/corner_logo.png" alt="Logo Left" className={styles.logoLeft} />
+        </Link>
       </div>
       <div className={styles.navbarCenter}>
         <img src="/images/logo.png" alt="Logo Center" className={styles.logoCenter} />
       </div>
       <div className={styles.navbarRight}>
-        <Link to="/search" className={styles.iconButton} aria-label="Search">
-            <Search color='black' />
-        </Link>
-        <Link to="/game-registy" className={styles.iconButton} aria-label="Game-Registry">
-            <Plus color='black' />
-        </Link>
-        <Link to="/stats" className={styles.iconButton} aria-label="Stats">
-            <ChartPie color='black' />
-        </Link>
-        <Link to="/profile" className={styles.iconButton} aria-label="Profile">
-            <User color='black' />
-        </Link>
+        {/* Botón del menú hamburguesa */}
+        <button className={styles.menuButton} onClick={toggleMenu} aria-label="Toggle Menu">
+          {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
+        
+        {/* Iconos visibles en pantallas grandes */}
+        <div className={`${styles.menuIcons} ${isMenuOpen ? styles.showMenu : ''}`}>
+          <Link to="/products" className={styles.iconButton} aria-label="Search">
+            <Search />
+          </Link>
+          <Link to="/game-registy" className={styles.iconButton} aria-label="Game-Registry">
+            <Plus />
+          </Link>
+          <Link to="/stats" className={styles.iconButton} aria-label="Stats">
+            <ChartPie />
+          </Link>
+          <Link to="/profile" className={styles.iconButton} aria-label="Profile">
+            <User />
+          </Link>
+        </div>
       </div>
     </nav>
   );
 }
 
-export default Navbar;
+export default BusinessNavbar;

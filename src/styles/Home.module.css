@@ -131,3 +131,63 @@
     max-width: 100%;
   }
 }
+
+/* Responsividad para dispositivos más pequeños */
+@media (max-width: 480px) {
+  .carouselSlide {
+    flex-direction: column; /* Cambia a una columna para mejor alineación vertical */
+    align-items: center;
+    padding: 10px; /* Reduce el padding para dispositivos más pequeños */
+  }
+
+  .leftColumn {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-left: 0; /* Elimina margen izquierdo */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+    padding: 10px; /* Añade un poco de padding para espaciado */
+  }
+
+  .title {
+    font-size: 24px; /* Reduce el tamaño de fuente para el título */
+  }
+
+  .subtitle {
+    font-size: 16px; /* Reduce el tamaño de fuente para el subtítulo */
+  }
+
+  .price {
+    font-size: 18px; /* Ajusta el tamaño del precio */
+  }
+
+  .buyButton button {
+    width: 100%; /* Botón ocupa todo el ancho disponible */
+    height: 40px; /* Ajusta la altura del botón */
+    font-size: 18px; /* Reduce el tamaño de fuente del botón */
+  }
+
+  .rightColumn {
+    position: relative; /* Elimina la posición absoluta */
+    width: 100%; /* Imagen ocupa todo el ancho disponible */
+    top: 0;
+    transform: translateY(0); /* Resetea la transformación */
+    margin-top: 20px; /* Añade un margen superior para separar de la columna izquierda */
+  }
+
+  .carouselImage {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Reduce el borde redondeado en dispositivos pequeños */
+  }
+
+  .bottomCarousel {
+    padding: 10px; /* Reduce padding del segundo carrusel */
+  }
+
+  .bottomImage {
+    height: 200px; /* Reduce la altura de las imágenes en el carrusel inferior */
+  }
+
+  .bottomTitle {
+    font-size: 12px; /* Reduce el tamaño del texto debajo de las imágenes */
+  }
+}
