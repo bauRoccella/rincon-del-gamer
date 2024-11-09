@@ -30,7 +30,7 @@ const topImages = [
 ];
 
 const bottomImages = [
-  { src: '/images/spiderman.png', title: 'Spider-Man Remastered' },
+  { src: '/images/MyCarousel/spiderman.png', title: 'Spider-Man Remastered' },
   { src: '/images/resident_evil.png', title: 'Resident Evil 3' },
   { src: '/images/god_of_war.png', title: 'God of War' },
   { src: '/images/boi.png', title: 'The Binding of Isaac' },

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import DefaultNav from "./components/DefaultNav";
+import Nav from "./components/Nav";
 import AdminNav from "./components/AdminNav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -11,9 +11,6 @@ import RoleSelection from "./pages/RoleSelection";
 import BusinessRegister from "./pages/BusinessRegister";
 import ForgotPasswordEmail from "./pages/ForgotPasswordEmail";
 import NewPassword from "./pages/NewPassword";
-import UserNav from "./components/UserNav";
-import BusinessNav from "./components/BusinessNav";
-import UserProfile from "./pages/UserProfile";
 import BusinessProfile from "./pages/BusinessProfile";
 import './styles/App.css';
 import PaymentMethod from "./pages/PaymentMethod";
@@ -21,7 +18,6 @@ import ShoppingCart from "./pages/ShoppingCart";
 import Wishlist from "./pages/Wishlist";
 import GameSearch from "./pages/GameSearch";
 import GamePageUser from "./pages/GamePageUser";
-import GamePageBusiness from "./pages/GamePageBusiness";
 
 export const UserRoutes = () => {
   return (
@@ -30,8 +26,8 @@ export const UserRoutes = () => {
         <Route
           path="/"
           element={
-            <>
-              <BusinessNav />
+            <> 
+              <Nav />
               <div className="content">
                 <Home />
               </div>
@@ -91,7 +87,7 @@ export const UserRoutes = () => {
           path="/profile"
           element={
             <>
-              <UserNav />
+              <Nav />
               <div className="content">
                 <BusinessProfile />
               </div>
@@ -103,7 +99,7 @@ export const UserRoutes = () => {
           path="/game-registry"
           element={
             <>
-              <UserNav />
+              <Nav />
               <div className="content">
                 <GameRegistry />
               </div>
@@ -115,7 +111,7 @@ export const UserRoutes = () => {
           path="/cart"
           element={
             <>
-              <UserNav />
+              <Nav />
               <div className="content">
                 <ShoppingCart />
               </div>
@@ -127,7 +123,7 @@ export const UserRoutes = () => {
           path="/pay"
           element={
             <>
-              <UserNav />
+              <Nav />
               <div className="content">
                 <PaymentMethod />
               </div>
@@ -139,7 +135,7 @@ export const UserRoutes = () => {
           path="/wishlist"
           element={
             <>
-              <UserNav />
+              <Nav />
               <div className="content">
                 <Wishlist />
               </div>
@@ -151,7 +147,7 @@ export const UserRoutes = () => {
           path="/products"
           element={
             <>
-              <UserNav />
+              <Nav />
               <div className="content">
                 <GameSearch />
               </div>
@@ -163,7 +159,7 @@ export const UserRoutes = () => {
           path="/product"
           element={
             <>
-              <BusinessNav />
+              <Nav />
               <div className="content">
                 <GamePageUser />
               </div>

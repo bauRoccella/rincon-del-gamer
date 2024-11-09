@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
 });
 
 // Agregar un interceptor para incluir el JWT en los headers
-axiosInstance.interceptors.request.use(
+axiosInstance.interceptors.request.use( 
     async (config) => {
         // Verifica si la ruta es pública
         if (!config.url.startsWith('/public')) {
