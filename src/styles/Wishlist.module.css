@@ -1,0 +1,177 @@
+.wishlistContainer {
+    padding: 50px;
+  }
+  
+  .title {
+    text-align: center;
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ajustar a dos columnas */
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #FECEDE;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  
+  .gameInfo {
+    flex-grow: 1;
+  }
+  
+  .gameTitle {
+    font-size: 20px;
+    color: #000000;
+    margin: 0;
+    font-family: 'Press Start 2P';
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .addToCart {
+    background-color: #FF6EC7;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .addToCart:hover {
+    background-color: #B57ECD;
+  }
+  
+  .remove {
+    background-color: #B57ECD;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .remove:hover {
+    background-color: #FF6EC7;
+  }
+  
+  .details {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .details:hover {
+    background-color: #FF6EC7;
+    color: #FFFFFF;
+  }
+  
+  .emptyMessage {
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'Rajdhani', sans-serif;
+    margin-top: 20px;
+  }
+  
+/* Responsividad */
+@media (max-width: 1124px) {
+  .wishlistContainer {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Ajustar a una columna */
+    gap: 15px;
+  }
+
+  .card {
+    flex-direction: center;
+    align-items: center;
+  }
+
+  .addToCart, .remove {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  .card {
+    align-items: center; /* Centra los elementos en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .image {
+    max-width: 100px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 15px; /* Reduce el espacio entre tarjetas en pantallas muy pequeñas */
+  }
+
+  .card {
+    padding: 15px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .image {
+    max-width: 80px; /* Tamaño más pequeño para pantallas pequeñas */
+  }
+
+  .gameTitle {
+    font-size: 18px; /* Reduce el tamaño del título */
+  }
+}

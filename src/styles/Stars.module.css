@@ -1,0 +1,19 @@
+.starsContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.filledStar {
+  color: #000000; /* Negro para estrellas llenas */
+}
+
+.halfFilledStar {
+  background: linear-gradient(90deg, #000000 50%, transparent 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #000000; /* Esto asegura que la parte izquierda esté negra */
+}
+
+.emptyStar {
+  color: #BFBFBF; /* Gris tenue para estrellas vacías */
+}

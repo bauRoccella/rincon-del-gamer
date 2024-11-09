@@ -1,59 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
 body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  background: linear-gradient(to bottom, #FF6EC7, #B57ECD);
+  color: #000;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+  text-align: left;
+}
+
+.footerSubscription {
+  color: #FFFFFF;
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subscribeForm {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+
+.subscribeForm input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  color: #787878;
+  font-weight: 600;
+  margin-right: 10px;
+  border: 2px solid #787878;
+  font-family: 'Rajdhani', sans-serif;
+  flex-grow: 1;
+}
+
+.subscribeForm button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #FECEDE;
+  color: #000;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.subscribeForm button:hover {
+  background-color: #FFB6C1;
+}
+
+/* Estilo para la columna del logo */
+.footerLogo {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footerLogo img {
+  max-width: 150px;
+}
+
+/* Estilo para la columna de contacto */
+.footerContact {
+  color: #FAF9F6;
+  font-size: 16px;
+}
+
+.footerContact h4 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.contactNumber {
+  color: #3092F7;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #000;
+  opacity: 0.7;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .footerContent {
     flex-direction: column;
-  }
-  
-  .content { 
-    flex: 1; 
-  }
-  
-  .footer {
-    background: linear-gradient(to bottom, #FF6EC7, #B57ECD);
-    color: #fff;
-    padding: 20px;
+    align-items: center;
     text-align: center;
+  }
+
+  .footerSection {
+    min-width: 100%;
+    margin: 10px 0;
+  }
+
+  .subscribeForm {
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin-top: auto; 
+    gap: 10px;
   }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 150px;
-    margin: 10px;
-  }
-  
-  .footer-section h4 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .footer-section p,
-  .footer-section a {
+
+  .subscribeForm input[type="email"],
+  .subscribeForm button {
+    width: 100%;
+    border-radius: 5px;
     margin: 5px 0;
   }
-  
-  .footer-section a {
-    color: white;
-    text-decoration: none;
+
+  .footerLogo img {
+    max-width: 80px;
   }
-  
-  .footer-section a:hover {
-    text-decoration: underline;
+
+  .contactNumber {
+    font-size: 18px;
   }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px;
   }
-  
-  
+
+  .footerSection {
+    font-size: 14px;
+  }
+
+  .subscribeForm button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .footerBottom {
+    font-size: 0.8em;
+  }
+}

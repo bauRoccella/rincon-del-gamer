@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: linear-gradient(to bottom, #FF6EC7, #B57ECD);
+    position: relative;
+    height: auto;
+  }
+  
+  .navbarLeft, .navbarCenter{
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbarRight {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .logoCenter {
+    max-height: 70%;
+    max-width: 100%;
+    height: 40px;
+  }
+  
+  .logoLeft {
+    max-height: 30%;
+    max-width: 100%;
+    height: 50px;
+  }
+  
+  .logoCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .navbarCenter {
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .loginButton {
+    background-color: #FECEDE;
+    color: black;
+    padding: 0.5rem 0.75rem; /* Reducir el padding */
+    border: 1px solid;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    margin-right: 1rem;
+    font-size: 16px; /* Reducir el tamaño de la fuente */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginButton:hover {
+    background-color: #6A1BBE;
+  }

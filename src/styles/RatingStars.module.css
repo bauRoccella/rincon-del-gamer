@@ -1,0 +1,18 @@
+.starsContainer {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .filledStar {
+    color: #000; /* Estrella rellena en negro */
+  }
+  
+  .emptyStar {
+    color: #d3d3d3; /* Estrella vacía en gris claro */
+  }
+  
+  .starsContainer:hover .emptyStar {
+    color: #a0a0a0; /* Ligero cambio al pasar el mouse */
+  }
+  

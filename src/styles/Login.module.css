@@ -1,72 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
 
-body.login-page {
-  background-image: url('/images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  font-family: 'Rajdhani', sans-serif;
-  background-color: #EABDF7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  padding: 2rem;
-  font-family: 'Rajdhani', sans-serif; /* Aplica la fuente a todos los elementos dentro de este contenedor */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el contenedor */
-  border-radius: 8px;
-  max-width: 400px; /* Tamaño máximo del contenedor */
-  width: 100%; /* Asegura que el contenedor no exceda el tamaño máximo */
-  margin: auto; /* Centra el contenedor horizontalmente */
-}
-
-form {
-  background-color: #EABDF7;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.loginContainer {
   position: relative;
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-.logo {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.loginBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
 
-form h2 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loginBox {
+  position: relative;
+  z-index: 2;
+  background-color: #EABDF7;
+  padding: 40px;
+  padding-top: 60px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.logoImage {
+  width: 300px;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loginTitle {
+  font-size: 32px;
   color: #8A2BE2;
-  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que el título también use la fuente */
+  text-align: center;
+  font-weight: 500;
 }
 
-input {
-  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los inputs también usen la fuente */
+.loginSubtitle {
+  font-size: 17px;
+  color: #4D7DBC;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
 }
 
-input::placeholder {
-  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los placeholders también usen la fuente */
+.inputField {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  color: #4D7DBC;
+  border-radius: 5px;
+  border: 1px solid rgba(50, 161, 198, 0.3);
+  background-color: #FFFFFF;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
 }
 
-button {
-  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los botones también usen la fuente */
+.forgotPassword {
+  display: block;
+  color: #4D7DBC;
+  margin-top: 10px;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: left;
+  font-weight: 600;
 }
 
-.passwordRecovery a {
-  font-family: 'Rajdhani', sans-serif; /* Asegúrate de que los enlaces también usen la fuente */
+.forgotPassword:hover {
+  display: block;
+  color: #8A2BE2;
+  margin-top: 10px;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: left;
+  font-weight: 600;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8A2BE2;
+  color: #FFFFFF;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+}
+
+.registerLink {
+  margin-top: 18px;
+  color: #4D7DBC;
+  text-align: center;
+  display: block;
+}
+
+.createAccountButton {
+  background: none;
+  border: none;
+  color: #8A2BE2;
+  font-size: 17px;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+}
+
+.createAccountButton:hover {
+  color: #32A1C6;
+}
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
+  .loginBox {
+    padding: 30px;
+    padding-top: 50px;
+  }
+
+  .logoImage {
+    width: 250px;
+    top: -40px;
+  }
+
+  .loginTitle {
+    font-size: 28px;
+  }
+
+  .loginSubtitle, .inputField, .forgotPassword, .loginButton, .registerLink, .createAccountButton {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginBox {
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  .logoImage {
+    width: 200px;
+    top: -30px;
+  }
+
+  .loginTitle {
+    font-size: 24px;
+  }
+
+  .loginSubtitle, .inputField, .forgotPassword, .loginButton, .registerLink, .createAccountButton {
+    font-size: 14px;
+  }
 }

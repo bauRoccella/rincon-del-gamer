@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+.roleSelectionContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.roleSelectionBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.roleSelectionBox {
+  position: relative;
+  z-index: 2;
+  background-color: #EABDF7;
+  padding: 40px;
+  padding-top: 60px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.logoImage {
+  width: 300px;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.roleSelectionTitle {
+  font-size: 32px;
+  color: #8A2BE2;
+  text-align: center;
+  font-weight: 500;
+}
+
+.roleSelectionSubtitle {
+  font-size: 17px;
+  color: #4D7DBC;
+  margin: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.selectContainer {
+  margin-bottom: 20px;
+}
+
+.roleSelect {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  color: #4D7DBC;
+  border-radius: 5px;
+  border: 1px solid rgba(50, 161, 198, 0.3);
+  background-color: #FFFFFF;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+}
+
+.registerButton {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8A2BE2;
+  color: #FFFFFF;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+}
+
+.loginLink {
+  margin-top: 18px;
+  color: #4D7DBC;
+  text-align: center;
+  display: block;
+}
+
+.loginLink a {
+  text-decoration: none;
+  color: #8A2BE2;
+  font-weight: 600;
+}
+
+.loginLink a:hover {
+  color: #32A1C6;
+}
+
+@media (max-width: 768px) {
+  .roleSelectionBox {
+    padding: 30px;
+    padding-top: 50px;
+  }
+
+  .logoImage {
+    width: 250px;
+    top: -40px;
+  }
+
+  .roleSelectionTitle {
+    font-size: 28px;
+  }
+
+  .roleSelectionSubtitle, .roleSelect, .registerButton, .loginLink a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roleSelectionBox {
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  .logoImage {
+    width: 200px;
+    top: -30px;
+  }
+
+  .roleSelectionTitle {
+    font-size: 24px;
+  }
+
+  .roleSelectionSubtitle, .roleSelect, .registerButton, .loginLink a {
+    font-size: 14px;
+  }
+}
