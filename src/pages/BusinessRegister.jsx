@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styles from '../styles/BusinessRegister.module.css';
 import background from '/images/fondo-iniciosesion.jpg';
 import rincondelgamerLogo from '/images/logo.png';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function BusinessRegister() {
   const [businessName, setBusinessName] = useState('');
@@ -10,45 +13,57 @@ export default function BusinessRegister() {
   const [photo, setPhoto] = useState(null);
   const [dragActive, setDragActive] = useState(false);
   const [previewImage, setPreviewImage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
+
+  async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('businessName', businessName);
+    formData.append('name', businessName);
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('photo', photo);
+    if (photo) {
+      formData.append('file', photo); // Asegúrate de que el backend espera 'file' para la imagen
+    }
 
-    fetch('/api/v1/businesses/sign-in', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Empresa registrada:', data);
-      })
-      .catch((error) => {
-        console.error('Error al registrar la empresa:', error);
+    try {
+      const response = await axios.post('http://localhost:3000/api/v1/public/businesses/sign-up', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data', // Necesario para manejar archivos
+        },
       });
-  };
+
+      console.log('Empresa registrada:', response.data);
+      setSuccessMessage('Empresa registrada exitosamente.');
+      navigate('/login');
+    } catch (error) {
+      if (error.response) {
+        setErrorMessage(error.response.data.message || 'Error al registrar la empresa.');
+      } else {
+        setErrorMessage('Error en la conexión. Inténtelo más tarde.');
+      }
+    }
+  }
 
   function handleFileChange(e) {
     const file = e.target.files[0];
     setPhoto(file);
     setPreviewImage(URL.createObjectURL(file));
-  };
+  }
 
   function handleDragEnter(e) {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(true);
-  };
+  }
 
   function handleDragLeave(e) {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-  };
+  }
 
   function handleDrop(e) {
     e.preventDefault();
@@ -59,17 +74,13 @@ export default function BusinessRegister() {
       setPhoto(file);
       setPreviewImage(URL.createObjectURL(file));
     }
-  };
+  }
 
   function handleRemoveImage() {
-    console.log("Botón de eliminación activado"); // Verifica que se dispara el evento
     setPhoto(null);
     setPreviewImage(null);
-    
-    // Resetea el valor del input de archivo para permitir seleccionar la misma imagen
-    document.getElementById("photo").value = null;
+    document.getElementById('photo').value = null; // Resetea el input de archivo
   }
-  
 
   return (
     <div className={styles.registerContainer}>
@@ -78,7 +89,7 @@ export default function BusinessRegister() {
       </div>
       <div className={styles.registerBox}>
         <img src={rincondelgamerLogo} alt="Logo" className={styles.logoImage} />
-        <h2 className={styles.registerTitle}>Registro de Sesión</h2>
+        <h2 className={styles.registerTitle}>Registro de Empresa</h2>
         <p className={styles.registerSubtitle}>Completa los campos con la información requerida</p>
         <form onSubmit={handleSubmit}>
           <input
@@ -117,7 +128,7 @@ export default function BusinessRegister() {
                 <img src={previewImage} alt="Preview" className={styles.previewImage} />
                 <button
                   type="button"
-                  onClick={handleRemoveImage} // No es necesario el ev
+                  onClick={handleRemoveImage}
                   className={styles.removeImageButton}
                 >
                   &times;
@@ -137,6 +148,8 @@ export default function BusinessRegister() {
           </div>
           <button type="submit" className={styles.registerButton}>Registrarse</button>
         </form>
+        {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
+        {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
         <p className={styles.loginLink}>
           ¿Ya tienes una cuenta? <a href="/login">Inicia Sesión</a>
         </p>

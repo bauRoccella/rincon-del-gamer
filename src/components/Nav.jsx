@@ -95,7 +95,7 @@ function Navbar() {
                 <Heart color="black" />
               </Link>
               <Link
-                to="/profile"
+                to="/users/profile"
                 className={styles.iconButton}
                 aria-label="Profile"
               >
@@ -136,7 +136,7 @@ function Navbar() {
               }`}
             >
               <Link
-                to="/products"
+                to="/businesses/products"
                 className={styles.iconButton}
                 aria-label="Search"
               >

@@ -3,15 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/UserRegister.module.css';
 import background from '/images/fondo-iniciosesion.jpg';
 import rincondelgamerLogo from '/images/logo.png';
+import axios from 'axios'; // Importa Axios
 
 export default function UserRegister() {
   const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
-    nombreUsuario: "",
-    fechaNacimiento: "",
-    correo: "",
-    contrasena: "",
+    name: "",
+    surname: "",
+    username: "",
+    birthDay: "",
+    email: "",
+    password: "",
   });
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -38,20 +39,23 @@ export default function UserRegister() {
     setLoading(true);
     setErrorMessage("");
     setSuccessMessage("");
+
     try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const response = await axios.post("http://localhost:3000/api/v1/public/users/sign-up", formData, {
+        headers: {
+          "Content-Type": "application/json"
+        }
       });
-      if (response.ok) {
-        setSuccessMessage("Registration successful!");
-        navigate('/login');
-      } else {
-        setErrorMessage("Registration failed.");
-      }
+
+      setSuccessMessage("Registro exitoso!");
+      navigate('/login'); // Redirige al login
+
     } catch (error) {
-      setErrorMessage("An error occurred.");
+      if (error.response) {
+        setErrorMessage(error.response.data.message || "Error al registrar el usuario.");
+      } else {
+        setErrorMessage("Error en la conexión. Inténtelo más tarde.");
+      }
     } finally {
       setLoading(false);
     }
@@ -69,8 +73,8 @@ export default function UserRegister() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="nombre"
-            value={formData.nombre}
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             placeholder="Nombre"
             className={styles.inputField}
@@ -78,8 +82,8 @@ export default function UserRegister() {
           />
           <input
             type="text"
-            name="apellido"
-            value={formData.apellido}
+            name="surname"
+            value={formData.surname}
             onChange={handleChange}
             placeholder="Apellido"
             className={styles.inputField}
@@ -87,8 +91,8 @@ export default function UserRegister() {
           />
           <input
             type="text"
-            name="nombreUsuario"
-            value={formData.nombreUsuario}
+            name="username"
+            value={formData.username}
             onChange={handleChange}
             placeholder="Nombre de Usuario"
             className={styles.inputField}
@@ -96,8 +100,8 @@ export default function UserRegister() {
           />
           <input
             type="date"
-            name="fechaNacimiento"
-            value={formData.fechaNacimiento}
+            name="birthDay"
+            value={formData.birthDay}
             onChange={handleChange}
             placeholder="Fecha de Nacimiento"
             className={styles.inputField}
@@ -105,8 +109,8 @@ export default function UserRegister() {
           />
           <input
             type="email"
-            name="correo"
-            value={formData.correo}
+            name="email"
+            value={formData.email}
             onChange={handleChange}
             placeholder="Correo Electrónico"
             className={styles.inputField}
@@ -114,8 +118,8 @@ export default function UserRegister() {
           />
           <input
             type="password"
-            name="contrasena"
-            value={formData.contrasena}
+            name="password"
+            value={formData.password}
             onChange={handleChange}
             placeholder="Contraseña"
             className={styles.inputField}

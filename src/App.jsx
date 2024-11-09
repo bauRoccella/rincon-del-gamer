@@ -18,6 +18,7 @@ import ShoppingCart from "./pages/ShoppingCart";
 import Wishlist from "./pages/Wishlist";
 import GameSearch from "./pages/GameSearch";
 import GamePageUser from "./pages/GamePageUser";
+import UserProfile from "./pages/UserProfile";
 
 export const UserRoutes = () => {
   return (
@@ -76,7 +77,7 @@ export const UserRoutes = () => {
           }
         />
         <Route
-          path="/forgot-password/new-password"
+          path="/forgot-password/:token"
           element={
             <div className="content">
               <NewPassword />
@@ -84,7 +85,19 @@ export const UserRoutes = () => {
           }
         />
         <Route
-          path="/profile"
+          path="/users/profile"
+          element={
+            <>
+              <Nav />
+              <div className="content">
+                <UserProfile />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/businesses/profile"
           element={
             <>
               <Nav />

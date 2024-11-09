@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/ForgotPasswordEmail.module.css'; // Importando el CSS Module
 import background from '/images/fondo-iniciosesion.jpg';
 import rincondelgamerLogo from '/images/logo.png';
+import axios from 'axios'; // Importando Axios
 
 export default function ForgotPasswordEmail() {
   const [email, setEmail] = useState('');
@@ -16,22 +17,15 @@ export default function ForgotPasswordEmail() {
     setError('');
 
     try {
-      const response = await fetch('/api/v1/forgot-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
+      const response = await axios.post('http://localhost:3000/api/v1/public/forgot-password/email', { email });
 
-      const data = await response.json();
-      if (response.ok) {
-        setMessage(data.message);
-      } else {
-        setError(data.message);
-      }
+      setMessage(response.data.message); // Mensaje de éxito del backend
     } catch (error) {
-      setError('Error al enviar la solicitud. Inténtelo de nuevo más tarde.');
+      if (error.response) {
+        setError(error.response.data.message || 'Error al enviar la solicitud.');
+      } else {
+        setError('Error de conexión. Inténtelo más tarde.');
+      }
     }
   };
 

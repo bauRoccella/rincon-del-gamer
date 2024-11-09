@@ -8,7 +8,7 @@ function BusinessProfile() {
   const [avatarUrl, setAvatarUrl] = useState(null);
 
   // Función para manejar la carga de imagen
-  const handleImageUpload = (event) => {
+  const handleImageUpload = (event) => { 
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
