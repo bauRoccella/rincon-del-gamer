@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Login.module.css';
-<<<<<<< Updated upstream
-=======
 import { jwtDecode } from "jwt-decode"; // Importa jwt-decode
 import background from '/images/fondo-iniciosesion.jpg';
 import rincondelgamerLogo from '/images/logo.png';
->>>>>>> Stashed changes
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -31,9 +29,6 @@ function Login() {
       });
 
       if (response.ok) {
-<<<<<<< Updated upstream
-        // Manejar el éxito del login
-=======
         const { token } = await response.json(); // Obtenemos el token del JSON de respuesta
         const decodedToken = jwtDecode(token); // Decodificamos el token
         
@@ -56,7 +51,7 @@ function Login() {
         }
       } else {
         console.error("Login failed");
->>>>>>> Stashed changes
+
       }
     } catch (error) {
       // Manejar el error del login
@@ -91,19 +86,7 @@ function Login() {
             placeholder="Contraseña"
             required
           />
-<<<<<<< Updated upstream
         </div>
-        <div className={styles.passwordRecovery}>
-          <a href="/password-recovery">Recupero de contraseña</a>
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? "Cargando..." : "Iniciar Sesión"}
-        </button>
-      </form>
-    </div>
-  );
-}
-=======
           <a href="/forgot-password/email" className={styles.forgotPassword}>¿Olvidó su contraseña?</a>
           <button type="submit" className={styles.loginButton} disabled={loading}>
             {loading ? "Cargando..." : "Iniciar Sesión"}
@@ -116,9 +99,7 @@ function Login() {
           </button>
         </p>
       </div>
-    </div> 
   ); 
 } 
->>>>>>> Stashed changes
 
 export default Login;

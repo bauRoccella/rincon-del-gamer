@@ -65,8 +65,6 @@ export const UserRoutes = () => {
           }
         />
         <Route
-<<<<<<< Updated upstream
-=======
           path="/users/sign-in"
           element={
             <div className="content">
@@ -111,7 +109,6 @@ export const UserRoutes = () => {
           }
         />
         <Route
->>>>>>> Stashed changes
           path="/game-registry"
           element={
             <>
