@@ -91,10 +91,100 @@ h1 {
   background-color: transparent;
   border: none;
   font-size: 1.2rem;
-  color: #ff0000;
+  color: #e600cb;
   cursor: pointer;
 }
 
 .deleteBtn:hover {
   color: #cc0000;
+}
+
+.carouselContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.chartSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.chartSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chartInfo {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.chartInfo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chartInfo li {
+  margin: 0.5rem 0;
+}
+
+
+.custom-carousel .slick-prev,
+.custom-carousel .slick-next {
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.custom-carousel .slick-prev {
+  left: -35px;
+}
+
+.custom-carousel .slick-next {
+  right: -35px;
+}
+
+.custom-carousel .slick-prev:before,
+.custom-carousel .slick-next:before {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.productsContainer {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.addButtonContainer {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.addGameButton {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addGameButton:hover {
+  background-color: #370061;
 }
