@@ -16,6 +16,30 @@ export const UserRoutes = () => {
           path="/"
           element={
             <>
+              <DefaultNav />
+              <div className="content">
+                <Home />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/businesses"
+          element={
+            <>
+              <BusinessNav />
+              <div className="content">
+                <Home />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <>
               <UserNav />
               <div className="content">
                 <Home />
@@ -41,6 +65,53 @@ export const UserRoutes = () => {
           }
         />
         <Route
+<<<<<<< Updated upstream
+=======
+          path="/users/sign-in"
+          element={
+            <div className="content">
+              <UserRegister />
+            </div>
+          }
+        />
+        <Route
+          path="/businesses/sign-in"
+          element={
+            <div className="content">
+              <BusinessRegister />
+            </div>
+          }
+        />
+        <Route
+          path="/forgot-password/email"
+          element={
+            <div className="content">
+              <ForgotPasswordEmail />
+            </div>
+          }
+        />
+        <Route
+          path="/forgot-password/:token"
+          element={
+            <div className="content">
+              <NewPassword />
+            </div>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <UserNav />
+              <div className="content">
+                <UserProfile />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+>>>>>>> Stashed changes
           path="/game-registry"
           element={
             <>
